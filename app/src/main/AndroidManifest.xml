@@ -12,6 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RentCar"
         tools:targetApi="31">
+<<<<<<< Updated upstream
+=======
+
+
+        <activity
+            android:name="com.msku.example.AddVehicleActivity"
+            android:exported="false" />
+>>>>>>> Stashed changes
         <activity
             android:name=".OwnersCar"
             android:exported="false" />
