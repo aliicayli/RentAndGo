@@ -18,8 +18,12 @@ CardView passengerCardView;
         setContentView(R.layout.activity_person_category);
         carOwnerCardView = findViewById(R.id.carOwner);
         passengerCardView = findViewById(R.id.passenger);
-
+        CarOwnerCardViewClick();
     }
-
+    private void CarOwnerCardViewClick() {
+        carOwnerCardView.setOnClickListener(view ->{
+            startActivity(new Intent(this,AddVehicleActivity.class));
+        });
+    }
 
 }
