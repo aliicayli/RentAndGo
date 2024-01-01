@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.msku.example.rentcar.R;
+
 public class AddVehicleActivity extends AppCompatActivity {
     private static final int GALLERY_REQUEST = 1889;
 
@@ -86,7 +88,7 @@ public class AddVehicleActivity extends AppCompatActivity {
 
             Car car = new Car(category,price,mileage,manufacturer,model,year,selectedUri);
             UserManagement.users.get(UserManagement.loggedEmail).cars.add(car) ;
-            startActivity(new Intent(this,OwnersCar.class));
+            //startActivity(new Intent(this,OwnersCar.class));
 
 
         });
