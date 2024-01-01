@@ -12,28 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RentCar"
         tools:targetApi="31">
-<<<<<<< Updated upstream
-=======
 
 
         <activity
             android:name="com.msku.example.AddVehicleActivity"
             android:exported="false" />
->>>>>>> Stashed changes
         <activity
-            android:name=".OwnersCar"
+            android:name="com.msku.example.PersonCategoryActivity"
             android:exported="false" />
         <activity
-            android:name=".AddVehicleActivity"
+            android:name="com.msku.example.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".PersonCategoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
+            android:name="com.msku.example.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
