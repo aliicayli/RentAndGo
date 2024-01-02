@@ -12,8 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RentCar"
         tools:targetApi="31">
-
-
+        <activity
+            android:name="com.msku.example.OwnersCar"
+            android:exported="false" />
         <activity
             android:name="com.msku.example.AddVehicleActivity"
             android:exported="false" />
