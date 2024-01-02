@@ -1,6 +1,5 @@
 package com.msku.example;
 
-import android.content.Context;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,7 +59,7 @@ public class OwnersCarAdapter extends RecyclerView.Adapter<OwnersCarAdapter.View
             super(itemView);
             mCardText = itemView.findViewById(R.id.vehicleName);
             mCardPrice= itemView.findViewById(R.id.quantity);
-            mCardImage = itemView.findViewById(R.id.categoryImage);
+            mCardImage = itemView.findViewById(R.id.vehicleImage);
             mCardYear = itemView.findViewById(R.id.year);
         }
     }

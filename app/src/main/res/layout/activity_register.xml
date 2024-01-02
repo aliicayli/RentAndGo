@@ -4,19 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#222431"
-    tools:context=".RegisterActivity">
-
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+    android:background="@color/white"
+    tools:context="com.msku.example.RegisterActivity">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,7 +15,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="734dp"
                 tools:layout_editor_absoluteX="-4dp"
                 tools:layout_editor_absoluteY="210dp">
 
@@ -35,8 +24,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginTop="64dp"
+                    android:layout_marginTop="32dp"
                     android:text="First Name *"
                     android:textColor="#03A9F4"
                     app:layout_constraintStart_toStartOf="@+id/firstName"
@@ -65,7 +53,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
                     android:layout_marginTop="8dp"
-                    android:text="Email"
+                    android:text="Email *"
                     android:textColor="#03A9F4"
                     app:layout_constraintStart_toStartOf="@+id/firstName"
                     app:layout_constraintTop_toBottomOf="@+id/firstName" />
@@ -206,8 +194,8 @@
                     android:id="@+id/register"
                     android:layout_width="256dp"
                     android:layout_height="64dp"
-                    android:layout_marginTop="64dp"
-                    android:background="@drawable/round_button"
+                    android:layout_marginTop="32dp"
+                    android:backgroundTint="@color/blue"
                     android:text="Register"
                     android:textColor="@android:color/white"
                     android:textSize="18sp"
@@ -217,25 +205,10 @@
                     app:layout_constraintTop_toBottomOf="@+id/password" />
 
                 <TextView
-                    android:id="@+id/a_member"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
-                    android:text="Already a member?"
-                    android:textColor="@android:color/white"
-                    app:fontFamily="@font/roboto"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/login"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/register" />
-
-                <TextView
                     android:id="@+id/registration"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="64dp"
+                    android:layout_marginTop="32dp"
                     android:layout_marginEnd="8dp"
                     android:text="Registration"
                     android:textColor="#03A9F4"
@@ -265,24 +238,10 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/registration" />
 
-                <TextView
-                    android:id="@+id/login"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:text="Login"
-                    android:textColor="#03A9F4"
-                    app:fontFamily="@font/roboto_bold"
-                    app:layout_constraintBottom_toBottomOf="@+id/a_member"
-                    app:layout_constraintStart_toEndOf="@+id/a_member"
-                    app:layout_constraintTop_toTopOf="@+id/a_member"
-                    app:layout_constraintVertical_bias="0.0" />
-
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
-    </ScrollView>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

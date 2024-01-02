@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context="com.msku.example.LoginActivity">
 
     <TextView
         android:id="@+id/welcome_to_title"
@@ -93,9 +93,8 @@
         android:id="@+id/login"
         android:layout_width="0dp"
         android:layout_height="64dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/round_button"
-        android:backgroundTint="#2196F3"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#0D8FF6"
         android:text="Login"
         android:textColor="@android:color/white"
         android:textColorHighlight="#3F51B5"
@@ -105,17 +104,6 @@
         app:layout_constraintEnd_toEndOf="@+id/password"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/password"
-        app:layout_constraintTop_toBottomOf="@+id/forgot_password" />
-
-    <TextView
-        android:id="@+id/forgot_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="forgot password?"
-        android:textColor="@android:color/white"
-        app:fontFamily="@font/roboto"
-        app:layout_constraintEnd_toEndOf="@+id/password"
         app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <TextView

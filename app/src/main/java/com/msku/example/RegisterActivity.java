@@ -22,7 +22,6 @@ import java.util.List;
 import java.util.ListIterator;
 
 public class RegisterActivity extends AppCompatActivity {
-    TextView loginTextView;
     EditText fullNameEditText;
     EditText emailEditText;
     EditText dateOfBirthEditText;
@@ -34,7 +33,6 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        loginTextView = findViewById(R.id.login);
         registerButton = findViewById(R.id.register);
         fullNameEditText = findViewById(R.id.firstName);
         emailEditText = findViewById(R.id.email);
@@ -42,13 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
         phoneNumberEditText = findViewById(R.id.phoneNumber);
         cityEditText = findViewById(R.id.city);
         passwordEditText = findViewById(R.id.password);
-        LoginTextViewClick();
         RegisterButtonClick();
-    }
-    private void LoginTextViewClick() {
-        loginTextView.setOnClickListener(view ->{
-            startActivity(new Intent(this,LoginActivity.class));
-        });
     }
 
     private void RegisterButtonClick() {

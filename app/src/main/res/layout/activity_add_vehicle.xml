@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#222431"
-    tools:context=".AddVehicleActivity">
+    android:background="@color/white"
+    tools:context="com.msku.example.AddVehicleActivity">
 
     <ScrollView
         android:layout_width="0dp"
@@ -184,35 +184,12 @@
                     app:layout_constraintStart_toStartOf="@+id/category"
                     app:layout_constraintTop_toBottomOf="@+id/yearText" />
 
-                <TextView
-                    android:id="@+id/imageURLText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Image URL"
-                    android:textColor="#03A9F4"
-                    app:layout_constraintStart_toStartOf="@+id/yearText"
-                    app:layout_constraintTop_toBottomOf="@+id/year" />
-
-                <EditText
-                    android:id="@+id/imageURL"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#03A9F4"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:textColor="@android:color/white"
-                    android:textSize="14sp"
-                    app:layout_constraintEnd_toEndOf="@+id/year"
-                    app:layout_constraintStart_toStartOf="@+id/year"
-                    app:layout_constraintTop_toBottomOf="@+id/imageURLText" />
-
                 <Button
                     android:id="@+id/add"
                     android:layout_width="0dp"
                     android:layout_height="64dp"
                     android:layout_marginTop="24dp"
-                    android:background="@drawable/round_button"
+                    android:backgroundTint="@color/blue"
                     android:text="Add"
                     app:layout_constraintEnd_toEndOf="@+id/year"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -224,17 +201,20 @@
                     android:layout_width="0dp"
                     android:layout_height="235dp"
                     android:layout_marginTop="16dp"
-                    android:background="#FFFFFF"
-                    app:layout_constraintEnd_toEndOf="@+id/imageURL"
-                    app:layout_constraintStart_toStartOf="@+id/imageURL"
-                    app:layout_constraintTop_toBottomOf="@+id/imageURL" />
+                    android:background="@drawable/frame"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintBottom_toTopOf="@id/load"
+                    app:layout_constraintEnd_toEndOf="@id/year"
+                    app:layout_constraintStart_toStartOf="@id/year"
+                    app:layout_constraintTop_toBottomOf="@id/year"
+                    app:srcCompat="@drawable/add_car" />
 
                 <Button
                     android:id="@+id/load"
                     android:layout_width="87dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:background="@drawable/round_button"
+                    android:backgroundTint="@color/blue"
                     android:text="Load"
                     app:layout_constraintStart_toStartOf="@+id/viewVehicle"
                     app:layout_constraintTop_toBottomOf="@+id/viewVehicle" />
