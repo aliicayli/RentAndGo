@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 
@@ -25,15 +26,18 @@ public class CarCategoryActivity extends AppCompatActivity {
         recycler_view = findViewById(R.id.recycler_view);
 
         List<String> cardTexts = new ArrayList<>();
-       cardTexts.add("Togg");
-
         List<Integer> cardImages = new ArrayList<>();
-
-            cardImages.add(R.drawable.car_togg);
-
-
+        cardTexts.add("SUV");
+        cardTexts.add("Super Sport");
+        cardTexts.add("Hatchback");
+        cardTexts.add("Coupe");
+        cardImages.add(R.drawable.suv);
+        cardImages.add(R.drawable.super_sport);
+        cardImages.add(R.drawable.hatchback);
+        cardImages.add(R.drawable.coupe);
 
         recycler_view.setLayoutManager(new LinearLayoutManager(this));
+        ownersCarAdapter = new CarCategoryAdapter(cardTexts ,cardImages);
         ownersCarAdapter = new CarCategoryAdapter(cardTexts ,cardImages);
         recycler_view.setAdapter(ownersCarAdapter);
 

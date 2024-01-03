@@ -1,5 +1,6 @@
 package com.msku.example;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,5 +49,8 @@ public class CarCategoryAdapter extends RecyclerView.Adapter<CarCategoryAdapter.
             mCardText = itemView.findViewById(R.id.categoryTextHeader);
             mCardImage = itemView.findViewById(R.id.vehicleCategoryImage);
         }
+
+
+
     }
 }
