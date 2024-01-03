@@ -64,66 +64,11 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/vehicleModel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Model : "
-                    android:textColor="@color/blue"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@+id/categoryTextHeader"
-                    app:layout_constraintTop_toBottomOf="@+id/categoryTextHeader" />
-
-                <TextView
-                    android:id="@+id/textView22"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Price :"
-                    android:textColor="@color/blue"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@+id/vehicleModel"
-                    app:layout_constraintTop_toBottomOf="@+id/vehicleName" />
-
-                <TextView
-                    android:id="@+id/textView23"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Year :"
-                    android:textColor="@color/blue"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@+id/textView22"
-                    app:layout_constraintTop_toBottomOf="@+id/quantity" />
-
-                <TextView
-                    android:id="@+id/vehicleName"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/vehicleModel"
-                    app:layout_constraintTop_toTopOf="@+id/vehicleModel" />
-
-                <TextView
-                    android:id="@+id/quantity"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/textView22"
-                    app:layout_constraintTop_toTopOf="@+id/textView22" />
-
-                <TextView
                     android:id="@+id/year"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/textView23"
-                    app:layout_constraintTop_toTopOf="@+id/textView23" />
+                    tools:layout_editor_absoluteY="98dp" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

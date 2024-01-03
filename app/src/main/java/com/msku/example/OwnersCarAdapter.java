@@ -59,7 +59,7 @@ public class OwnersCarAdapter extends RecyclerView.Adapter<OwnersCarAdapter.View
             super(itemView);
             mCardText = itemView.findViewById(R.id.vehicleName);
             mCardPrice= itemView.findViewById(R.id.quantity);
-            mCardImage = itemView.findViewById(R.id.vehicleImage);
+            mCardImage = itemView.findViewById(R.id.vehicleCategoryImage);
             mCardYear = itemView.findViewById(R.id.year);
         }
     }

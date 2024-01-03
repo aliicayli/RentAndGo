@@ -19,6 +19,7 @@ CardView passengerCardView;
         carOwnerCardView = findViewById(R.id.carOwner);
         passengerCardView = findViewById(R.id.passenger);
         CarOwnerCardViewClick();
+        PassengerCardViewClick();
     }
     private void CarOwnerCardViewClick() {
         carOwnerCardView.setOnClickListener(view ->{
@@ -26,4 +27,9 @@ CardView passengerCardView;
         });
     }
 
+    private void PassengerCardViewClick() {
+        passengerCardView.setOnClickListener(view ->{
+            startActivity(new Intent(this,CarCategoryActivity.class));
+        });
+    }
 }
