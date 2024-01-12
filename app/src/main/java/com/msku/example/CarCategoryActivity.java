@@ -37,8 +37,8 @@ public class CarCategoryActivity extends AppCompatActivity {
         cardImages.add(R.drawable.coupe);
 
         recycler_view.setLayoutManager(new LinearLayoutManager(this));
-        ownersCarAdapter = new CarCategoryAdapter(cardTexts ,cardImages);
-        ownersCarAdapter = new CarCategoryAdapter(cardTexts ,cardImages);
+        ownersCarAdapter = new CarCategoryAdapter(this,cardTexts ,cardImages);
+        //ownersCarAdapter = new CarCategoryAdapter(cardTexts ,cardImages);
         recycler_view.setAdapter(ownersCarAdapter);
 
     }

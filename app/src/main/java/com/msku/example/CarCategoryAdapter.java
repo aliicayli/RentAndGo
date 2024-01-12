@@ -1,5 +1,6 @@
 package com.msku.example;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
@@ -18,20 +19,31 @@ import java.util.List;
 public class CarCategoryAdapter extends RecyclerView.Adapter<CarCategoryAdapter.ViewHolder> {
     private List<String> mCardTexts;
     private List<Integer>mCardImages;
-    public CarCategoryAdapter(List<String> cardTexts, List<Integer> cardImages) {
+    private Context mContext;
+    public CarCategoryAdapter(Context context, List<String> cardTexts, List<Integer> cardImages) {
         mCardTexts = cardTexts;
         mCardImages = cardImages;
+        mContext = context;
     }
     @NonNull
     @Override
     public CarCategoryAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.vehicle_card, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.category_card, parent, false);
         return new CarCategoryAdapter.ViewHolder(view);    }
 
     @Override
     public void onBindViewHolder(@NonNull CarCategoryAdapter.ViewHolder holder, int position) {
         holder.mCardText.setText(mCardTexts.get(position));
         holder.mCardImage.setImageResource(mCardImages.get(position));
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UserManagement.selectedCategory = holder.mCardText.getText().toString();
+                Intent intent = new Intent(mContext, AdListActivity.class);
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override

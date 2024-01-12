@@ -14,5 +14,9 @@ public class UserManagement {
     //static HashMap<String, ArrayList<String>> users = new HashMap<>();
     static HashMap<String, User> users = new HashMap<>();
     static String loggedEmail;
+    static HashMap<Integer, Ad> ads = new HashMap<>();
+    static String selectedCategory;
+
+
 
 }

@@ -85,9 +85,11 @@ public class AddVehicleActivity extends AppCompatActivity {
 
             if (yearEditText.getText() == null) year = "";
             else year = yearEditText.getText().toString();
-
-            Car car = new Car(category,price,mileage,manufacturer,model,year,selectedUri);
-            UserManagement.users.get(UserManagement.loggedEmail).cars.add(car) ;
+            int id = 0;
+            Car car = new Car(++id,category,price,mileage,manufacturer,model,year,selectedUri);
+            UserManagement.users.get(UserManagement.loggedEmail).cars.add(car);
+            Ad ad = new Ad(car);
+            UserManagement.ads.put(id,ad);
             startActivity(new Intent(this,OwnersCar.class));
         });
     }
