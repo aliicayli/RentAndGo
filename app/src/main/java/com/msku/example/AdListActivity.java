@@ -35,7 +35,7 @@ public class AdListActivity extends AppCompatActivity {
         }
 
         recycler_view.setLayoutManager(new LinearLayoutManager(this));
-        ownersCarAdapter = new AdListAdapter(cardTexts,cardImages);
+        ownersCarAdapter = new AdListAdapter(this,cardTexts,cardImages);
         recycler_view.setAdapter(ownersCarAdapter);
     }
 }

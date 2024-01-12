@@ -1,5 +1,6 @@
 package com.msku.example;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
@@ -18,7 +19,9 @@ import java.util.List;
 public class AdListAdapter extends RecyclerView.Adapter<AdListAdapter.ViewHolder> {
     private List<String> mCardTexts;
     private List<Uri>mCardImages;
-    public AdListAdapter(List<String> cardTexts, List<Uri> cardImages) {
+    private Context mContext;
+
+    public AdListAdapter(Context context, List<String> cardTexts, List<Uri> cardImages) {
         mCardTexts = cardTexts;
         mCardImages = cardImages;
     }
@@ -35,7 +38,8 @@ public class AdListAdapter extends RecyclerView.Adapter<AdListAdapter.ViewHolder
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(mContext, InformationAdActivity.class);
+                mContext.startActivity(intent);
             }
         });
     }
