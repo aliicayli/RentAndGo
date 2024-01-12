@@ -26,6 +26,8 @@ public class AddVehicleActivity extends AppCompatActivity {
     EditText modelEditText;
     EditText yearEditText;
     Uri selectedUri;
+    int id = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +87,6 @@ public class AddVehicleActivity extends AppCompatActivity {
 
             if (yearEditText.getText() == null) year = "";
             else year = yearEditText.getText().toString();
-            int id = 0;
             Car car = new Car(++id,category,price,mileage,manufacturer,model,year,selectedUri);
             UserManagement.users.get(UserManagement.loggedEmail).cars.add(car);
             Ad ad = new Ad(car);
