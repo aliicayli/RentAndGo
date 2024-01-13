@@ -24,6 +24,7 @@ public class AdListAdapter extends RecyclerView.Adapter<AdListAdapter.ViewHolder
     public AdListAdapter(Context context, List<String> cardTexts, List<Uri> cardImages) {
         mCardTexts = cardTexts;
         mCardImages = cardImages;
+        mContext = context;
     }
     @NonNull
     @Override

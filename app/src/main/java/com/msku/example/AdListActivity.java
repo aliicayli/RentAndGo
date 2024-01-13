@@ -30,7 +30,7 @@ public class AdListActivity extends AppCompatActivity {
             Ad value = entry.getValue();
             if (UserManagement.ads.get(key).car.category.toString().equals(UserManagement.selectedCategory.toString())) {
                 cardTexts.add(UserManagement.ads.get(key).car.model);
-                cardImages.add(UserManagement.ads.get(key).car.carImage);
+                cardImages.add(UserManagement.ads.get(key ).car.carImage);
             }
         }
 
