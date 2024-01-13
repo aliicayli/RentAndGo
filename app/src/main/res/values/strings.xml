@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">RentCar</string>
     <string name="register">Register</string>
+    <string-array name="categories">
+        <item>togg</item>
+        <item>tesla</item>
+        </string-array>
 </resources>

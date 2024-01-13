@@ -7,11 +7,17 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 
 import com.msku.example.rentcar.R;
+
+import java.util.ArrayList;
 
 public class AddVehicleActivity extends AppCompatActivity {
     private static final int GALLERY_REQUEST = 1889;
@@ -19,7 +25,7 @@ public class AddVehicleActivity extends AppCompatActivity {
     Button loadImageButton;
     Button addButton;
     private ImageView viewVehicle;
-    EditText categoryEditText;
+    String categoryText;
     EditText priceEditText;
     EditText mileageEditText;
     EditText manufacturerEditText;
@@ -33,9 +39,28 @@ public class AddVehicleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_vehicle);
+        Spinner categorySpinner = findViewById(R.id.spinner);
+        categorySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String text = parent.getItemAtPosition(position).toString();
+                categoryText = text;            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        ArrayList<String> categories = new ArrayList<>();
+        categories.add("SUV");
+        categories.add("Super Sport");
+        categories.add("Hatchback");
+        categories.add("Coupe");
+        ArrayAdapter<String> adapter= new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,categories);
+        adapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
+        categorySpinner.setAdapter(adapter);
         loadImageButton = findViewById(R.id.load);
         viewVehicle = findViewById(R.id.viewVehicle);
-        categoryEditText = findViewById(R.id.category);
         priceEditText = findViewById(R.id.price);
         mileageEditText = findViewById(R.id.mileage);
         manufacturerEditText = findViewById(R.id.manufacturer);
@@ -70,9 +95,8 @@ public class AddVehicleActivity extends AppCompatActivity {
             String manufacturer = "";
             String model = "";
             String year = "";
-            if (categoryEditText.getText() == null) category = "";
-            else category = categoryEditText.getText().toString();
 
+            category = categoryText;
             if (priceEditText.getText() == null) price = "";
             else price = priceEditText.getText().toString();
 
