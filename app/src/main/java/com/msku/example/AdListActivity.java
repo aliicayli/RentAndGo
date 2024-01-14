@@ -21,21 +21,29 @@ public class AdListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ad_list);
-        recycler_view = findViewById(R.id.recycler_view);
+        recycler_view = findViewById(R.id.recycler_viewAd);
 
         List<String> cardTexts = new ArrayList<>();
+        List<String> cardPrices = new ArrayList<>();
+        List<String> cardYears = new ArrayList<>();
+        List<String> cardMileages = new ArrayList<>();
+        List<String> cardManifacturer = new ArrayList<>();
         List<Uri> cardImages = new ArrayList<>();
         for (HashMap.Entry<Integer, Ad> entry : UserManagement.ads.entrySet()) {
             Integer key = entry.getKey();
             Ad value = entry.getValue();
             if (UserManagement.ads.get(key).car.category.toString().equals(UserManagement.selectedCategory.toString())) {
                 cardTexts.add(UserManagement.ads.get(key).car.model);
+                cardPrices.add(UserManagement.ads.get(key).car.price);
+                cardYears.add(UserManagement.ads.get(key).car.year);
                 cardImages.add(UserManagement.ads.get(key ).car.carImage);
+                cardMileages.add(UserManagement.ads.get(key ).car.mileage);
+                cardManifacturer.add(UserManagement.ads.get(key ).car.manufacturer);
             }
         }
 
         recycler_view.setLayoutManager(new LinearLayoutManager(this));
-        ownersCarAdapter = new AdListAdapter(this,cardTexts,cardImages);
+        ownersCarAdapter = new AdListAdapter(this,cardTexts,cardImages,cardPrices,cardYears,cardMileages,cardManifacturer);
         recycler_view.setAdapter(ownersCarAdapter);
     }
 }

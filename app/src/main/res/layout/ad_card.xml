@@ -125,6 +125,47 @@
                     app:layout_constraintStart_toEndOf="@+id/textView23"
                     app:layout_constraintTop_toTopOf="@+id/textView23" />
 
+
+                <TextView
+                    android:id="@+id/mileageHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Mileage :"
+                    android:textColor="@color/blue"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/textView22"
+                    app:layout_constraintTop_toBottomOf="@+id/year" />
+
+                <TextView
+                    android:id="@+id/mileageText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/vehicleModel"
+                    app:layout_constraintTop_toTopOf="@+id/mileageHeader" />
+
+                <TextView
+                    android:id="@+id/manifacturerHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Manifacturer :"
+                    android:textColor="@color/blue"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/mileageHeader"
+                    app:layout_constraintTop_toBottomOf="@+id/mileageHeader" />
+
+                <TextView
+                    android:id="@+id/manifacturerText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/manifacturerHeader"
+                    app:layout_constraintTop_toTopOf="@+id/manifacturerHeader" />
+
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
