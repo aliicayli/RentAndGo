@@ -20,6 +20,11 @@ Button continueBookingButton;
 TextView pickUpDateTextView;
 TextView returnDateTextView;
 TextView activeDateTextView;
+TextView firstNameTextView;
+TextView lastNameTextView;
+TextView emailTextView;
+TextView phoneNumberTextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +32,10 @@ TextView activeDateTextView;
         continueBookingButton = findViewById(R.id.continueBooking);
         pickUpDateTextView = findViewById(R.id.pickupDate);
         returnDateTextView= findViewById(R.id.returnDate);
+        firstNameTextView = findViewById(R.id.firstName);
+        lastNameTextView = findViewById(R.id.lastName);
+        emailTextView = findViewById(R.id.email);
+        phoneNumberTextView = findViewById(R.id.phoneNumber);
         ContinueBookingButtonClick();
         PickUpDateTextViewClick();
         ReturnDateTextViewClick();
@@ -34,6 +43,10 @@ TextView activeDateTextView;
 
     private void ContinueBookingButtonClick() {
         continueBookingButton.setOnClickListener(view ->{
+            UserManagement.ads.get(UserManagement.selectedAdID).firstName = firstNameTextView.getText().toString();
+            UserManagement.ads.get(UserManagement.selectedAdID).lastName = lastNameTextView.getText().toString();
+            UserManagement.ads.get(UserManagement.selectedAdID).email = emailTextView.getText().toString();
+            UserManagement.ads.get(UserManagement.selectedAdID).phoneNumber = phoneNumberTextView.getText().toString();
             startActivity(new Intent(this,BookingCompleteActivity.class));
         });
     }

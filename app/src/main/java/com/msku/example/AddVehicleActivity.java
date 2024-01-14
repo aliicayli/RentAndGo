@@ -114,7 +114,8 @@ public class AddVehicleActivity extends AppCompatActivity {
             Car car = new Car(++id,category,price,mileage,manufacturer,model,year,selectedUri);
             UserManagement.users.get(UserManagement.loggedEmail).cars.add(car);
             Ad ad = new Ad(car);
-            UserManagement.ads.put(id,ad);
+            ad.id = id;
+            UserManagement.ads.put(ad.id,ad);
             startActivity(new Intent(this,OwnersCar.class));
         });
     }

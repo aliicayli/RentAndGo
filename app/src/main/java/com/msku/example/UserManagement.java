@@ -16,6 +16,7 @@ public class UserManagement {
     static String loggedEmail;
     static HashMap<Integer, Ad> ads = new HashMap<>();
     static String selectedCategory;
+    static int selectedAdID;
 
 
 

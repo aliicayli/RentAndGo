@@ -54,6 +54,7 @@ public class AdListAdapter extends RecyclerView.Adapter<AdListAdapter.ViewHolder
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                UserManagement.selectedAdID = position;
                 Intent intent = new Intent(mContext, InformationAdActivity.class);
                 mContext.startActivity(intent);
             }
