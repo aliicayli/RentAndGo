@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "628323207339",
+    "project_id": "rentandgo-8b956",
+    "storage_bucket": "rentandgo-8b956.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:628323207339:android:2797dd20062f5ff57f8fee",
+        "android_client_info": {
+          "package_name": "com.msku.example"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjb-Q9R4__Ux0eFiuBnU5cv9HtE1nRl50"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
