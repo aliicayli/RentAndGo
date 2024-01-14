@@ -19,6 +19,7 @@ public class InformationAdActivity extends AppCompatActivity implements DatePick
 Button continueBookingButton;
 TextView pickUpDateTextView;
 TextView returnDateTextView;
+TextView activeDateTextView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +29,7 @@ TextView returnDateTextView;
         returnDateTextView= findViewById(R.id.returnDate);
         ContinueBookingButtonClick();
         PickUpDateTextViewClick();
+        ReturnDateTextViewClick();
     }
 
     private void ContinueBookingButtonClick() {
@@ -37,6 +39,15 @@ TextView returnDateTextView;
     }
     private void PickUpDateTextViewClick() {
         pickUpDateTextView.setOnClickListener(view ->{
+            activeDateTextView = pickUpDateTextView;
+            DialogFragment dataPicker = new DatePickerFragment();
+            dataPicker.show(getSupportFragmentManager(),"Date Picker");
+        });
+    }
+
+    private void ReturnDateTextViewClick() {
+        returnDateTextView.setOnClickListener(view ->{
+            activeDateTextView = returnDateTextView;
             DialogFragment dataPicker = new DatePickerFragment();
             dataPicker.show(getSupportFragmentManager(),"Date Picker");
         });
@@ -48,6 +59,6 @@ TextView returnDateTextView;
         c.set(Calendar.MONTH,month);
         c.set(Calendar.DAY_OF_MONTH,dayOfMonth);
         String currentDateString = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
-        pickUpDateTextView.setText(currentDateString.toString());
+        activeDateTextView.setText(currentDateString.toString());
     }
 }
