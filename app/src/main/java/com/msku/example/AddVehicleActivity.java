@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.msku.example.rentcar.R;
 
@@ -116,7 +117,17 @@ public class AddVehicleActivity extends AppCompatActivity {
             Ad ad = new Ad(car);
             ad.id = id;
             UserManagement.ads.put(ad.id,ad);
-            startActivity(new Intent(this,OwnersCar.class));
+            Toast.makeText(getApplicationContext(), "Added car ", Toast.LENGTH_LONG).show();
+            WaitForCarList();
         });
+    }
+
+    private void WaitForCarList () {
+        try {
+            Thread.sleep (2 * 1000);
+            startActivity(new Intent(this,OwnersCar.class));
+        } catch (InterruptedException ex) {
+            System.err.println (ex);
+        }
     }
 }
