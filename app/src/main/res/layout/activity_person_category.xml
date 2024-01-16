@@ -19,19 +19,12 @@
         android:textSize="30sp"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/logOutButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="24dp"
-        android:text="Log Out" />
-
     <androidx.cardview.widget.CardView
         android:id="@+id/carOwner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:padding="24dp"
         app:cardBackgroundColor="#03A8F4"
@@ -47,7 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Car Owner"
-                android:textColor="#000000"
+                android:textColor="#FFFFFF"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -55,7 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Rent your car"
-                android:textColor="#000000"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="normal" />
 
@@ -64,8 +57,8 @@
                 android:layout_height="170dp"
                 android:layout_marginVertical="8dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/car_owner"
-                tools:srcCompat="@drawable/car_owner" />
+                app:srcCompat="@drawable/key"
+                tools:srcCompat="@drawable/key" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -91,7 +84,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Passenger"
-                android:textColor="#000000"
+                android:textColor="#FFFFFF"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -99,7 +92,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Rent a car"
-                android:textColor="#000000"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="normal" />
 
@@ -108,11 +101,22 @@
                 android:layout_height="170dp"
                 android:layout_marginVertical="8dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/rent_car"
-                tools:srcCompat="@drawable/rent_car" />
+                app:srcCompat="@drawable/car"
+                tools:srcCompat="@drawable/car" />
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/logOutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginEnd="18dp"
+        android:paddingLeft="24dp"
+        android:text="Log Out"
+        app:icon="@android:drawable/ic_menu_revert"
+        app:iconSize="20dp" />
 
 </LinearLayout>
