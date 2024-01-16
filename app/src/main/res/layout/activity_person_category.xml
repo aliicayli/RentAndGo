@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
@@ -17,6 +18,13 @@
         android:textColor="@color/blue"
         android:textSize="30sp"
         android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/logOutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="24dp"
+        android:text="Log Out" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/carOwner"
@@ -104,6 +112,7 @@
                 tools:srcCompat="@drawable/rent_car" />
 
         </LinearLayout>
+
     </androidx.cardview.widget.CardView>
 
 </LinearLayout>
