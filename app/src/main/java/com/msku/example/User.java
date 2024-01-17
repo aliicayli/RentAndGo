@@ -20,4 +20,7 @@ public class User {
         this.password = password;
         this.cars = cars;
     }
+    public User() {
+        // Gerekirse burada default değerler atayın
+    }
 }

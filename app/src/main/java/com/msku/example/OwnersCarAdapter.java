@@ -15,6 +15,7 @@ import com.msku.example.rentcar.R;
 import java.util.List;
 
 public class OwnersCarAdapter extends RecyclerView.Adapter<OwnersCarAdapter.ViewHolder> {
+    private List<Car> carList;
 
     private List<String> mCardTexts;
     private List<String> mCardPrices;
@@ -27,6 +28,11 @@ public class OwnersCarAdapter extends RecyclerView.Adapter<OwnersCarAdapter.View
         mCardYears = cardYears;
     }
 
+    public OwnersCarAdapter(List<Car> carList) {
+        this.carList = carList;
+    }
+
+
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.vehicle_card, parent, false);
@@ -35,17 +41,17 @@ public class OwnersCarAdapter extends RecyclerView.Adapter<OwnersCarAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
-        holder.mCardText.setText(mCardTexts.get(position));
-        holder.mCardPrice.setText(mCardPrices.get(position));
+        Car  car = carList.get(position);
+        holder.mCardText.setText(car.model);
+        holder.mCardPrice.setText(car.price);
         //holder.mCardImage.setImageResource(mCardImages.get(position));
-        holder.mCardImage.setImageURI(mCardImages.get(position));
-        holder.mCardYear.setText(mCardYears.get(position));
+        holder.mCardImage.setImageURI(Uri.parse(car.carImage));
+        holder.mCardYear.setText(car.year);
     }
 
     @Override
     public int getItemCount() {
-        return mCardTexts.size();
+        return carList.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
