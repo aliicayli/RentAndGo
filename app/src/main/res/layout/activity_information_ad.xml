@@ -27,13 +27,12 @@
                     android:id="@+id/information"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="32dp"
-                    android:layout_marginBottom="24dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="50dp"
                     android:fontFamily="@font/roboto_medium"
                     android:text="Information"
                     android:textColor="@color/blue"
-                    android:textSize="32sp"
-                    android:textStyle="bold"
+                    android:textSize="20sp"
                     app:layout_constraintBottom_toTopOf="@+id/rental_time"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +43,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="50dp"
                     android:layout_marginEnd="24dp"
                     app:cardBackgroundColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -79,7 +78,6 @@
                             android:text="Car Rental Time"
                             android:textColor="@color/white"
                             android:textSize="18sp"
-                            android:textStyle="bold"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -101,8 +99,7 @@
                                 android:layout_weight="1"
                                 android:fontFamily="@font/roboto_bold"
                                 android:text="PICKUP DATE"
-                                android:textColor="#FFFFFF"
-                                android:textStyle="bold" />
+                                android:textColor="#00E676" />
 
                             <TextView
                                 android:id="@+id/pickupTimeText"
@@ -111,8 +108,7 @@
                                 android:layout_weight="1"
                                 android:fontFamily="@font/roboto_bold"
                                 android:text="PICKUP TIME"
-                                android:textColor="#FFFFFF"
-                                android:textStyle="bold" />
+                                android:textColor="#00E676" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -204,8 +200,7 @@
                                 android:layout_weight="1"
                                 android:fontFamily="@font/roboto_bold"
                                 android:text="RETURN DATE"
-                                android:textColor="#FFFFFF"
-                                android:textStyle="bold" />
+                                android:textColor="#00E676" />
 
                             <TextView
                                 android:id="@+id/returnTimeText"
@@ -214,8 +209,7 @@
                                 android:layout_weight="1"
                                 android:fontFamily="@font/roboto_bold"
                                 android:text="RETURN TIME"
-                                android:textColor="#FFFFFF"
-                                android:textStyle="bold" />
+                                android:textColor="#00E676" />
                         </LinearLayout>
 
 
@@ -324,7 +318,6 @@
                             android:text="Driver Details"
                             android:textColor="@color/white"
                             android:textSize="18sp"
-                            android:textStyle="bold"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -341,12 +334,11 @@
                                 android:id="@+id/mr"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:buttonTint="@color/white"
+                                android:buttonTint="@color/black"
                                 android:checked="true"
                                 android:fontFamily="@font/roboto"
                                 android:paddingRight="10dp"
-                                android:text="Mr"
-                                android:textColor="#FFFFFF" />
+                                android:text="Mr" />
 
                             <RadioButton
                                 android:id="@+id/ms"
@@ -356,8 +348,7 @@
                                 android:buttonTint="@color/black"
                                 android:fontFamily="@font/roboto"
                                 android:paddingRight="10dp"
-                                android:text="Ms"
-                                android:textColor="#FFFFFF" />
+                                android:text="Ms" />
                         </RadioGroup>
 
                         <LinearLayout
@@ -384,9 +375,7 @@
                                     android:layout_marginTop="8dp"
                                     android:fontFamily="@font/roboto"
                                     android:paddingLeft="4dp"
-                                    android:text="First Name"
-                                    android:textColor="#FFFFFF"
-                                    android:textStyle="bold" />
+                                    android:text="First Name" />
 
                                 <EditText
                                     android:id="@+id/firstName"
@@ -412,9 +401,7 @@
                                     android:layout_marginTop="8dp"
                                     android:fontFamily="@font/roboto"
                                     android:paddingLeft="4dp"
-                                    android:text="Last Name"
-                                    android:textColor="#FFFFFF"
-                                    android:textStyle="bold" />
+                                    android:text="Last Name" />
 
                                 <EditText
                                     android:id="@+id/lastName"
@@ -443,9 +430,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto"
                                 android:paddingLeft="4dp"
-                                android:text="Email"
-                                android:textColor="#FFFFFF"
-                                android:textStyle="bold" />
+                                android:text="Email" />
 
                             <EditText
                                 android:id="@+id/email"
@@ -472,9 +457,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto"
                                 android:paddingLeft="4dp"
-                                android:text="Phone Number"
-                                android:textColor="#FFFFFF"
-                                android:textStyle="bold" />
+                                android:text="Phone Number" />
 
                             <EditText
                                 android:id="@+id/phoneNumber"
@@ -500,7 +483,7 @@
                     android:background="@drawable/round_button"
                     android:fontFamily="@font/roboto_medium"
                     android:text="Continue Booking"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/personalInfoText"

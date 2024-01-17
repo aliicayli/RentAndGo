@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="-10dp"
     android:background="@color/white"
     tools:context="com.msku.example.BookingCompleteActivity">
 
@@ -29,12 +28,11 @@
                     android:id="@+id/bookingCompleteText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="32dp"
+                    android:layout_marginTop="16dp"
                     android:fontFamily="@font/roboto_medium"
                     android:text="Booking Complete"
                     android:textColor="@color/blue"
-                    android:textSize="32sp"
-                    android:textStyle="bold"
+                    android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -53,9 +51,9 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:background="@drawable/round_card"
-                        android:backgroundTint="#41d202"
+                        android:backgroundTint="#24F577"
                         android:paddingBottom="10dp">
 
                         <ImageView
@@ -76,8 +74,6 @@
                             android:fontFamily="@font/roboto_bold"
                             android:text="Your Booking Is Done"
                             android:textColor="@color/white"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
                             app:layout_constraintEnd_toEndOf="@+id/check_icon"
                             app:layout_constraintStart_toStartOf="@+id/check_icon"
                             app:layout_constraintTop_toBottomOf="@+id/check_icon" />
@@ -125,7 +121,6 @@
                             android:text="Driver Details"
                             android:textColor="@color/white"
                             android:textSize="18sp"
-                            android:textStyle="bold"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -149,8 +144,7 @@
                                     android:layout_width="50dp"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/roboto"
-                                    android:text="Name:"
-                                    android:textStyle="bold" />
+                                    android:text="Name:" />
 
                                 <TextView
                                     android:id="@+id/name"
@@ -174,8 +168,7 @@
                                     android:layout_width="50dp"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/roboto"
-                                    android:text="Email:"
-                                    android:textStyle="bold" />
+                                    android:text="Email:" />
 
                                 <TextView
                                     android:id="@+id/email"
@@ -199,8 +192,7 @@
                                     android:layout_width="50dp"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/roboto"
-                                    android:text="Phone:"
-                                    android:textStyle="bold" />
+                                    android:text="Phone:" />
 
                                 <TextView
                                     android:id="@+id/phoneNumber"
@@ -261,7 +253,6 @@
                             android:text="Summary"
                             android:textColor="@color/white"
                             android:textSize="18sp"
-                            android:textStyle="bold"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -303,8 +294,7 @@
                                     android:layout_width="70dp"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/roboto"
-                                    android:text="Rate:"
-                                    android:textStyle="bold" />
+                                    android:text="Rate:" />
 
                                 <TextView
                                     android:id="@+id/rate"
@@ -327,8 +317,7 @@
                                     android:layout_width="70dp"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/roboto"
-                                    android:text="Total Days:"
-                                    android:textStyle="bold" />
+                                    android:text="Total Days:" />
 
                                 <TextView
                                     android:id="@+id/totalDays"
@@ -352,8 +341,7 @@
                                     android:layout_width="70dp"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/roboto"
-                                    android:text="Pick Up:"
-                                    android:textStyle="bold" />
+                                    android:text="Pick Up:" />
 
                                 <TextView
                                     android:id="@+id/pickup"
@@ -376,8 +364,7 @@
                                     android:layout_width="70dp"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/roboto"
-                                    android:text="Drop Off:"
-                                    android:textStyle="bold" />
+                                    android:text="Drop Off:" />
 
                                 <TextView
                                     android:id="@+id/dropoff"
@@ -512,8 +499,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:fontFamily="@font/roboto"
-                                        android:text="Total:"
-                                        android:textStyle="bold" />
+                                        android:text="Total:" />
 
                                     <TextView
                                         android:id="@+id/totalCost"
@@ -538,6 +524,9 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </ScrollView>
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
