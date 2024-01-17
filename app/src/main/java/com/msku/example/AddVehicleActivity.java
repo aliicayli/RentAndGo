@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 
 import com.msku.example.rentcar.R;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class AddVehicleActivity extends AppCompatActivity {
@@ -32,7 +34,7 @@ public class AddVehicleActivity extends AppCompatActivity {
     EditText manufacturerEditText;
     EditText modelEditText;
     EditText yearEditText;
-    Uri selectedUri;
+    Bitmap selectedBitmap;
     int id = 0;
 
 
@@ -83,8 +85,13 @@ public class AddVehicleActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == GALLERY_REQUEST && resultCode == RESULT_OK) {
             Uri selectedImage = data.getData();
-            selectedUri = selectedImage;
-            viewVehicle.setImageURI(selectedImage);
+            Bitmap selectedBitmap = null;
+            try {
+                selectedBitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), data.getData());
+            } catch (IOException e) {
+                Log.d("HATA", "Resmi yüklerken hata oluştu: " + e.getMessage());
+            }
+            viewVehicle.setImageBitmap(selectedBitmap);
         }
     }
 
@@ -112,7 +119,7 @@ public class AddVehicleActivity extends AppCompatActivity {
 
             if (yearEditText.getText() == null) year = "";
             else year = yearEditText.getText().toString();
-            Car car = new Car(++id,category,price,mileage,manufacturer,model,year,selectedUri.toString());
+            Car car = new Car(++id,category,price,mileage,manufacturer,model,year,selectedBitmap);
             UserManagement.users.get(UserManagement.loggedEmail).cars.add(car);
             Ad ad = new Ad(car);
             ad.id = id;

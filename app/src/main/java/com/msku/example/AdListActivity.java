@@ -36,7 +36,7 @@ public class AdListActivity extends AppCompatActivity {
                 cardTexts.add(UserManagement.ads.get(key).car.model);
                 cardPrices.add(UserManagement.ads.get(key).car.price);
                 cardYears.add(UserManagement.ads.get(key).car.year);
-                cardImages.add(UserManagement.ads.get(key ).car.carImage);
+                cardImages.add(UserManagement.ads.get(key ).car.carImage.toString());
                 cardMileages.add(UserManagement.ads.get(key ).car.mileage);
                 cardManifacturer.add(UserManagement.ads.get(key ).car.manufacturer);
             }

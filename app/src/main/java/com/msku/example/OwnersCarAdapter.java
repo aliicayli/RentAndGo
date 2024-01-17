@@ -1,5 +1,7 @@
 package com.msku.example;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,9 +20,9 @@ public class OwnersCarAdapter extends RecyclerView.Adapter<OwnersCarAdapter.View
 
     private List<String> mCardTexts;
     private List<String> mCardPrices;
-    private List<String> mCardImages;
+    private List<Bitmap> mCardImages;
     private List<String> mCardYears;
-    public OwnersCarAdapter(List<String> cardTexts,List<String> cardPrices, List<String> cardImages,List<String> cardYears) {
+    public OwnersCarAdapter(List<String> cardTexts,List<String> cardPrices, List<Bitmap> cardImages,List<String> cardYears) {
         mCardTexts = cardTexts;
         mCardPrices= cardPrices;
         mCardImages = cardImages;
@@ -39,7 +41,9 @@ public class OwnersCarAdapter extends RecyclerView.Adapter<OwnersCarAdapter.View
         holder.mCardText.setText(mCardTexts.get(position));
         holder.mCardPrice.setText(mCardPrices.get(position));
         //holder.mCardImage.setImageResource(mCardImages.get(position));
-        holder.mCardImage.setImageURI(Uri.parse(mCardImages.get(position)));
+        Bitmap bitmap = BitmapFactory.decodeFile(mCardImages.get(position).toString());
+        holder.mCardImage.setImageBitmap(bitmap);
+        //holder.mCardImage.setImageURI(Uri.parse(mCardImages.get(position)));
         holder.mCardYear.setText(mCardYears.get(position));
     }
 
