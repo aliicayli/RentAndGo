@@ -28,7 +28,7 @@ public class AdListActivity extends AppCompatActivity {
         List<String> cardYears = new ArrayList<>();
         List<String> cardMileages = new ArrayList<>();
         List<String> cardManifacturer = new ArrayList<>();
-        List<Uri> cardImages = new ArrayList<>();
+        List<String> cardImages = new ArrayList<>();
         for (HashMap.Entry<Integer, Ad> entry : UserManagement.ads.entrySet()) {
             Integer key = entry.getKey();
             Ad value = entry.getValue();

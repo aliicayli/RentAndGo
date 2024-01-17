@@ -1,5 +1,6 @@
 package com.msku.example;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -21,14 +22,14 @@ import java.util.List;
 
 public class AdListAdapter extends RecyclerView.Adapter<AdListAdapter.ViewHolder> {
     private List<String> mCardTexts;
-    private List<Uri>mCardImages;
+    private List<String>mCardImages;
     private List<String>mCardPrices;
     private List<String>mCardYear;
     private List<String>mCardMileage;
     private List<String>mCardManifacturer;
     private Context mContext;
 
-    public AdListAdapter(Context context, List<String> cardTexts, List<Uri> cardImages,List<String> pricesTexts,List<String> yearTexts,List<String> mileageTexts,List<String> manifacturerTexts) {
+    public AdListAdapter(Context context, List<String> cardTexts, List<String> cardImages,List<String> pricesTexts,List<String> yearTexts,List<String> mileageTexts,List<String> manifacturerTexts) {
         mCardTexts = cardTexts;
         mCardImages = cardImages;
         mCardPrices = pricesTexts;
@@ -44,9 +45,9 @@ public class AdListAdapter extends RecyclerView.Adapter<AdListAdapter.ViewHolder
         return new AdListAdapter.ViewHolder(view);    }
 
     @Override
-    public void onBindViewHolder(@NonNull AdListAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull AdListAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.mCardText.setText(mCardTexts.get(position));
-        holder.mCardImage.setImageURI(mCardImages.get(position));
+        holder.mCardImage.setImageURI(Uri.parse(mCardImages.get(position)));
         holder.mCardPrice.setText(mCardPrices.get(position));
         holder.mCardYear.setText(mCardYear.get(position));
         holder.mCardMileage.setText(mCardMileage.get(position));

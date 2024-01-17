@@ -34,7 +34,7 @@ public class OwnersCar extends AppCompatActivity {
         }
 
 
-        List<Uri> cardImages = new ArrayList<>();
+        List<String> cardImages = new ArrayList<>();
         for (int i = 0; i < UserManagement.users.get(UserManagement.loggedEmail).cars.size(); i++) {
             cardImages.add(UserManagement.users.get(UserManagement.loggedEmail).cars.get(i).carImage);
         }

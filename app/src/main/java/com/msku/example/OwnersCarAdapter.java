@@ -18,9 +18,9 @@ public class OwnersCarAdapter extends RecyclerView.Adapter<OwnersCarAdapter.View
 
     private List<String> mCardTexts;
     private List<String> mCardPrices;
-    private List<Uri> mCardImages;
+    private List<String> mCardImages;
     private List<String> mCardYears;
-    public OwnersCarAdapter(List<String> cardTexts,List<String> cardPrices, List<Uri> cardImages,List<String> cardYears) {
+    public OwnersCarAdapter(List<String> cardTexts,List<String> cardPrices, List<String> cardImages,List<String> cardYears) {
         mCardTexts = cardTexts;
         mCardPrices= cardPrices;
         mCardImages = cardImages;
@@ -39,7 +39,7 @@ public class OwnersCarAdapter extends RecyclerView.Adapter<OwnersCarAdapter.View
         holder.mCardText.setText(mCardTexts.get(position));
         holder.mCardPrice.setText(mCardPrices.get(position));
         //holder.mCardImage.setImageResource(mCardImages.get(position));
-        holder.mCardImage.setImageURI(mCardImages.get(position));
+        holder.mCardImage.setImageURI(Uri.parse(mCardImages.get(position)));
         holder.mCardYear.setText(mCardYears.get(position));
     }
 

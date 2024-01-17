@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:628323207339:android:2797dd20062f5ff57f8fee",
         "android_client_info": {
-          "package_name": "com.msku.example"
+          "package_name": "com.msku.example.rentcar"
         }
       },
       "oauth_client": [],

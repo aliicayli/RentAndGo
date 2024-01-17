@@ -112,7 +112,7 @@ public class AddVehicleActivity extends AppCompatActivity {
 
             if (yearEditText.getText() == null) year = "";
             else year = yearEditText.getText().toString();
-            Car car = new Car(++id,category,price,mileage,manufacturer,model,year,selectedUri);
+            Car car = new Car(++id,category,price,mileage,manufacturer,model,year,selectedUri.toString());
             UserManagement.users.get(UserManagement.loggedEmail).cars.add(car);
             Ad ad = new Ad(car);
             ad.id = id;

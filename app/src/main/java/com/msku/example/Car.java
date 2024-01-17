@@ -11,9 +11,9 @@ public class Car {
     String manufacturer;
     String model;
     String year;
-    Uri carImage;
+    String carImage;
 
-    public Car(int id,String category, String price, String mileage, String manufacturer, String model, String year,Uri carImage) {
+    public Car(int id,String category, String price, String mileage, String manufacturer, String model, String year,String carImage) {
         this.id = id;
         this.category = category;
         this.price = price;
