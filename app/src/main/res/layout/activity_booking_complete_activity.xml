@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="-10dp"
     android:background="@color/white"
     tools:context="com.msku.example.BookingCompleteActivity">
 
@@ -32,7 +33,7 @@
                     android:fontFamily="@font/roboto_medium"
                     android:text="Booking Complete"
                     android:textColor="@color/blue"
-                    android:textSize="30sp"
+                    android:textSize="32sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -537,9 +538,6 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </ScrollView>
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

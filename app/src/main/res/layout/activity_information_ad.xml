@@ -32,7 +32,7 @@
                     android:fontFamily="@font/roboto_medium"
                     android:text="Information"
                     android:textColor="@color/blue"
-                    android:textSize="30sp"
+                    android:textSize="32sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/rental_time"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -341,11 +341,12 @@
                                 android:id="@+id/mr"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:buttonTint="@color/black"
+                                android:buttonTint="@color/white"
                                 android:checked="true"
                                 android:fontFamily="@font/roboto"
                                 android:paddingRight="10dp"
-                                android:text="Mr" />
+                                android:text="Mr"
+                                android:textColor="#FFFFFF" />
 
                             <RadioButton
                                 android:id="@+id/ms"
@@ -355,7 +356,8 @@
                                 android:buttonTint="@color/black"
                                 android:fontFamily="@font/roboto"
                                 android:paddingRight="10dp"
-                                android:text="Ms" />
+                                android:text="Ms"
+                                android:textColor="#FFFFFF" />
                         </RadioGroup>
 
                         <LinearLayout

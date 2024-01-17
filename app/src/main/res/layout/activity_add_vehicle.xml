@@ -32,7 +32,7 @@
                     android:layout_marginTop="32dp"
                     android:text="Add Vehicle "
                     android:textColor="#03A9F4"
-                    android:textSize="30sp"
+                    android:textSize="32sp"
                     android:textStyle="bold"
                     app:fontFamily="@font/nunito"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -67,8 +67,8 @@
 
                 <Spinner
                     android:id="@+id/spinner"
-                    android:layout_width="141dp"
-                    android:layout_height="37dp"
+                    android:layout_width="347dp"
+                    android:layout_height="43dp"
                     android:backgroundTint="#2196F3"
                     android:foregroundTint="#2196F3"
                     android:textColor="@color/blue"
