@@ -23,13 +23,16 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.msku.example.rentcar.R;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Map;
 
 import kotlin.io.TextStreamsKt;
 
@@ -43,6 +46,9 @@ public class RegisterActivity extends AppCompatActivity {
     EditText cityEditText;
     EditText passwordEditText;
     Button registerButton;
+
+
+    FirebaseFirestore firestoreDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +62,9 @@ public class RegisterActivity extends AppCompatActivity {
         passwordEditText = findViewById(R.id.password);
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
+
+        firestoreDatabase = FirebaseFirestore.getInstance();
+
         RegisterButtonClick();
     }
 
@@ -109,16 +118,34 @@ public class RegisterActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
+                                FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+                                String userId = firebaseUser.getUid();
+
+                                Map<String, Object> userMap = new HashMap<>();
+                                userMap.put("fullName",finalFullName ); // bu fieldları doldursan olur mu bilmiyorm ben isimleri şimdi mi evet
+                                userMap.put("email", finalEmail);
+                                userMap.put("dateOfBirth", finalDateOfBirth);
+                                userMap.put("phoneNumber", finalPhoneNumber);
+                                userMap.put("city", finalCity);
+                                userMap.put("password", finalPassword);
+                                userMap.put("userId", userId);
 
                                 Toast.makeText(RegisterActivity.this,"Account created.",Toast.LENGTH_SHORT).show();
                                 ArrayList<Car> cars = new ArrayList<>();
-                                User user = new User(finalFullName, finalEmail, finalDateOfBirth, finalPhoneNumber, finalCity, finalPassword,cars);
+                                User user2 = new User(finalFullName, finalEmail, finalDateOfBirth, finalPhoneNumber, finalCity, finalPassword,cars);
+
+                                firestoreDatabase.collection("users").document(userId).set(userMap)
+                                        .addOnSuccessListener(documentRef->{
+                                            Toast.makeText(RegisterActivity.this, "Kullanıcı başarıyla kaydedildi", Toast.LENGTH_SHORT).show();
+                                        }
+                                );
+
+
                                 //UserManagement.users.put(user.email,user);
-                                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                                FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-                                String userId = firebaseUser.getUid();
-                                DatabaseReference reference = database.getReference("Users").child(userId);
-                                reference.push().setValue(user);
+                              //  FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+                               // DatabaseReference reference = database.getReference("Users").child(userId);
+                               // reference.push().setValue(user);
                                 Intent intent =new Intent(getApplicationContext(),LoginActivity.class);
                                 startActivity(intent);
                                 finish();

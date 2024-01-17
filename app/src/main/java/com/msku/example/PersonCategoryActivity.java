@@ -19,6 +19,7 @@ public class PersonCategoryActivity extends AppCompatActivity {
 CardView carOwnerCardView;
 CardView passengerCardView;
 Button logOutButton;
+Button myCars;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,10 +29,19 @@ Button logOutButton;
         carOwnerCardView = findViewById(R.id.carOwner);
         passengerCardView = findViewById(R.id.passenger);
         logOutButton = findViewById(R.id.logOutButton);
+        myCars = findViewById(R.id.buttonMyCars);
         CarOwnerCardViewClick();
         PassengerCardViewClick();
         LogOutButtonClick();
+        handleMyCarsButtonClick();
     }
+
+    private void handleMyCarsButtonClick() {
+        myCars.setOnClickListener(view->{
+            startActivity(new Intent(this, OwnersCar.class));
+        });
+    }
+
     private void CarOwnerCardViewClick() {
         carOwnerCardView.setOnClickListener(view ->{
             startActivity(new Intent(this,AddVehicleActivity.class));

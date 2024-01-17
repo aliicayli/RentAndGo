@@ -12,14 +12,22 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.msku.example.rentcar.R;
 
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 public class CarCategoryAdapter extends RecyclerView.Adapter<CarCategoryAdapter.ViewHolder> {
     private List<String> mCardTexts;
     private List<Integer>mCardImages;
     private Context mContext;
+
+
     public CarCategoryAdapter(Context context, List<String> cardTexts, List<Integer> cardImages) {
         mCardTexts = cardTexts;
         mCardImages = cardImages;
@@ -39,12 +47,18 @@ public class CarCategoryAdapter extends RecyclerView.Adapter<CarCategoryAdapter.
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String category = holder.mCardText.getText().toString();
+
+
                 UserManagement.selectedCategory = holder.mCardText.getText().toString();
                 Intent intent = new Intent(mContext, AdListActivity.class);
+                intent.putExtra("secilenKategori",category);
                 mContext.startActivity(intent);
             }
         });
     }
+
+
 
     @Override
     public int getItemCount() {

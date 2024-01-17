@@ -16,7 +16,7 @@ import com.msku.example.rentcar.R;
 import java.text.DateFormat;
 import java.util.Calendar;
 
-public class InformationAdActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
+public class InformationAdActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{//yok. tamam listeeki suv a tıklyaınca range rover geliyor. Range ye tıklayınca info panel geliyor.. info burası demievet
 Button continueBookingButton;
 TextView pickUpDateTextView;
 TextView returnDateTextView;
@@ -26,10 +26,15 @@ TextView lastNameTextView;
 TextView emailTextView;
 TextView phoneNumberTextView;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_information_ad);
+
+        Intent intent = new Intent();
+
+
         continueBookingButton = findViewById(R.id.continueBooking);
         pickUpDateTextView = findViewById(R.id.pickupDate);
         returnDateTextView= findViewById(R.id.returnDate);
@@ -44,10 +49,10 @@ TextView phoneNumberTextView;
 
     private void ContinueBookingButtonClick() {
         continueBookingButton.setOnClickListener(view ->{
-            UserManagement.ads.get(UserManagement.selectedAdID).firstName = firstNameTextView.getText().toString();
-            UserManagement.ads.get(UserManagement.selectedAdID).lastName = lastNameTextView.getText().toString();
-            UserManagement.ads.get(UserManagement.selectedAdID).email = emailTextView.getText().toString();
-            UserManagement.ads.get(UserManagement.selectedAdID).phoneNumber = phoneNumberTextView.getText().toString();
+            //UserManagement.ads.get(UserManagement.selectedAdID).firstName  = firstNameTextView.getText().toString();
+            //UserManagement.ads.get(UserManagement.selectedAdID).lastName   = lastNameTextView.getText().toString();
+            //UserManagement.ads.get(UserManagement.selectedAdID).email      = emailTextView.getText().toString();
+            //UserManagement.ads.get(UserManagement.selectedAdID).phoneNumber = phoneNumberTextView.getText().toString();
             startActivity(new Intent(this,BookingCompleteActivity.class));
         });
     }
@@ -75,4 +80,5 @@ TextView phoneNumberTextView;
         String currentDateString = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
         activeDateTextView.setText(currentDateString.toString());
     }
+
 }

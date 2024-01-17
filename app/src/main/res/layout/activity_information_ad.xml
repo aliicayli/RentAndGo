@@ -397,7 +397,6 @@
                                     android:textColor="@color/white"
                                     android:textSize="14sp" />
                             </LinearLayout>
-
                             <LinearLayout
                                 android:id="@+id/lastNameLayout"
                                 android:layout_width="wrap_content"
