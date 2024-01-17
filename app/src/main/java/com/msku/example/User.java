@@ -11,12 +11,13 @@ public class User {
     public String password;
     public ArrayList<Car> cars = new ArrayList<>();
 
-    public User(String fullName,String email,String dateOfBirth, String phoneNumber, String city, String password){
+    public User(String fullName,String email,String dateOfBirth, String phoneNumber, String city, String password,ArrayList<Car> cars){
         this.fullName = fullName;
         this.email = email;
         this.dateOfBirth = dateOfBirth;
         this.phoneNumber = phoneNumber;
         this.city = city;
         this.password = password;
+        this.cars = cars;
     }
 }

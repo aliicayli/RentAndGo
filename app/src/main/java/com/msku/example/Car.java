@@ -4,7 +4,6 @@ import android.net.Uri;
 import android.widget.EditText;
 
 public class Car {
-    int id;
     String category;
     String price;
     String mileage;
@@ -13,8 +12,7 @@ public class Car {
     String year;
     Uri carImage;
 
-    public Car(int id,String category, String price, String mileage, String manufacturer, String model, String year,Uri carImage) {
-        this.id = id;
+    public Car(String category, String price, String mileage, String manufacturer, String model, String year,Uri carImage) {
         this.category = category;
         this.price = price;
         this.mileage = mileage;

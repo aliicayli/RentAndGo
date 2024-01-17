@@ -21,6 +21,8 @@ import com.google.firebase.Firebase;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.msku.example.rentcar.R;
 
 import java.util.ArrayList;
@@ -59,7 +61,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void RegisterButtonClick() {
         registerButton.setOnClickListener(view ->{
-            String fullName = "a";
+            String fullName = "";
             String email = "";
             String dateOfBirth = "";
             String phoneNumber = "";
@@ -96,12 +98,27 @@ public class RegisterActivity extends AppCompatActivity {
                 return;
             }
 
+            String finalFullName = fullName;
+            String finalEmail = email;
+            String finalDateOfBirth = dateOfBirth;
+            String finalPhoneNumber = phoneNumber;
+            String finalCity = city;
+            String finalPassword = password;
             auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
+
                                 Toast.makeText(RegisterActivity.this,"Account created.",Toast.LENGTH_SHORT).show();
+                                ArrayList<Car> cars = new ArrayList<>();
+                                User user = new User(finalFullName, finalEmail, finalDateOfBirth, finalPhoneNumber, finalCity, finalPassword,cars);
+                                //UserManagement.users.put(user.email,user);
+                                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                                FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+                                String userId = firebaseUser.getUid();
+                                DatabaseReference reference = database.getReference("Users").child(userId);
+                                reference.push().setValue(user);
                                 Intent intent =new Intent(getApplicationContext(),LoginActivity.class);
                                 startActivity(intent);
                                 finish();
@@ -112,12 +129,6 @@ public class RegisterActivity extends AppCompatActivity {
                         }
                     });
 
-
-
-            //User user = new User(fullName,email,dateOfBirth,phoneNumber,city,password);
-            //UserManagement.users.put(user.email,user);
-
-            //startActivity(new Intent(this,LoginActivity.class));
         });
     }
 }

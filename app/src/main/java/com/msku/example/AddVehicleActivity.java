@@ -1,5 +1,6 @@
 package com.msku.example;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -16,6 +17,12 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.msku.example.rentcar.R;
 
 import java.util.ArrayList;
@@ -33,8 +40,6 @@ public class AddVehicleActivity extends AppCompatActivity {
     EditText modelEditText;
     EditText yearEditText;
     Uri selectedUri;
-    int id = 0;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,29 +101,35 @@ public class AddVehicleActivity extends AppCompatActivity {
             String manufacturer = "";
             String model = "";
             String year = "";
-
+            price = String.valueOf(priceEditText.getText());
+            mileage = String.valueOf(mileageEditText.getText());
+            manufacturer = String.valueOf(manufacturerEditText.getText());
+            model = String.valueOf(modelEditText.getText());
+            year = String.valueOf(yearEditText.getText());
             category = categoryText;
-            if (priceEditText.getText() == null) price = "";
-            else price = priceEditText.getText().toString();
+            FirebaseAuth mAuth = FirebaseAuth.getInstance();
+            FirebaseUser currentUser = mAuth.getCurrentUser();
+            String userID = currentUser.getUid();
 
-            if (mileageEditText.getText() == null) mileage = "";
-            else mileage = mileageEditText.getText().toString();
+            Car car = new Car(category,price,mileage,manufacturer,model,year,selectedUri);
 
-            if (manufacturerEditText.getText() == null) manufacturer = "";
-            else manufacturer = manufacturerEditText.getText().toString();
 
-            if (modelEditText.getText() == null) model = "";
-            else model = modelEditText.getText().toString();
 
-            if (yearEditText.getText() == null) year = "";
-            else year = yearEditText.getText().toString();
-            Car car = new Car(++id,category,price,mileage,manufacturer,model,year,selectedUri);
-            UserManagement.users.get(UserManagement.loggedEmail).cars.add(car);
-            Ad ad = new Ad(car);
-            ad.id = id;
-            UserManagement.ads.put(ad.id,ad);
-            Toast.makeText(getApplicationContext(), "Added car ", Toast.LENGTH_LONG).show();
-            WaitForCarList();
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+            String userId = firebaseUser.getUid();
+            DatabaseReference reference = database.getReference("Users").child(userId).child("togg");
+            reference.setValue(car.carImage.toString()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    Toast.makeText(AddVehicleActivity.this,"teadasd",Toast.LENGTH_SHORT).show();
+                }
+            });
+            //Toast.makeText(this,test,Toast.LENGTH_SHORT);
+
+
+
+
         });
     }
 
