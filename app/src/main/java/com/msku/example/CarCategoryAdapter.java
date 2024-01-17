@@ -39,25 +39,28 @@ public class CarCategoryAdapter extends RecyclerView.Adapter<CarCategoryAdapter.
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.category_card, parent, false);
         return new CarCategoryAdapter.ViewHolder(view);    }
 
+
+
+
     @Override
     public void onBindViewHolder(@NonNull CarCategoryAdapter.ViewHolder holder, int position) {
-        holder.mCardText.setText(mCardTexts.get(position));
-        holder.mCardImage.setImageResource(mCardImages.get(position));
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String category = holder.mCardText.getText().toString();
+                int adapterPosition = holder.getAdapterPosition();
 
+                if (adapterPosition != RecyclerView.NO_POSITION) {
+                    String category = mCardTexts.get(adapterPosition);
 
-                UserManagement.selectedCategory = holder.mCardText.getText().toString();
-                Intent intent = new Intent(mContext, AdListActivity.class);
-                intent.putExtra("secilenKategori",category);
-                mContext.startActivity(intent);
+                    UserManagement.selectedCategory = holder.mCardText.getText().toString();
+                    Intent intent = new Intent(mContext, AdListActivity.class);
+                    intent.putExtra("secilenKategori", category);
+                    mContext.startActivity(intent);
+                }
             }
         });
-    }
 
+    }
 
 
     @Override
@@ -72,11 +75,18 @@ public class CarCategoryAdapter extends RecyclerView.Adapter<CarCategoryAdapter.
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            mCardText = itemView.findViewById(R.id.categoryTextHeader);
+            mCardText = itemView.findViewById(R.id.categoryTextTitle);
             mCardImage = itemView.findViewById(R.id.vehicleCategoryImage);
         }
 
 
-
     }
+
+
+
+
+
+
+
+
 }

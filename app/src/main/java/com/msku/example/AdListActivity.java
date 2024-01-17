@@ -26,14 +26,12 @@ public class AdListActivity extends AppCompatActivity {
     private AdListAdapter2 ownersCarAdapter;
 
     Intent intent;
-    String secilenKategory="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ad_list);
         intent = getIntent();
         recycler_view = findViewById(R.id.recycler_viewAd);
-        secilenKategory = intent.getStringExtra("secilenKategori");
 
 
 
@@ -60,11 +58,10 @@ public class AdListActivity extends AppCompatActivity {
         ownersCarAdapter = new AdListAdapter2(this,adList);
         recycler_view.setAdapter(ownersCarAdapter);
 
-        fetchCategoryCars(secilenKategory);//bunu yazmıştık bir yerde
+        fetchCategoryCars(intent.getStringExtra("secilenKategori"));//bunu yazmıştık bir yerde
     }
 
     private void fetchCategoryCars(String category) {
-        Log.e("toggggggggggggggggggggggggg",category.toString());
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         database.collection("cars").whereEqualTo("category",category).get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
@@ -80,26 +77,27 @@ public class AdListActivity extends AppCompatActivity {
                         car.year= documentCarSnapshot.getString("year");
 
                         String userId = documentCarSnapshot.getString("userId");
+
+                        Log.e("gelen ilanların kullanıcıları :: ",userId);
                         Ad ad = new Ad(car);
 
-                        database.collection("user").whereEqualTo("userId",userId).get().addOnSuccessListener(
-                                documentUserSnapshots ->{
-                                    DocumentSnapshot userDoc = documentUserSnapshots.getDocuments().get(0); //zaten bir tane eri gelicek
-
+                        database.collection("user").document(userId).get().addOnSuccessListener(
+                                documentUserSnapshot ->{
                                     Date date = new Date();
                                     ad.AttachInformationData(
                                             date,
                                             date,
-                                            userDoc.getString("firstName"),
-                                            userDoc.getString("lastName"),
-                                            userDoc.getString("mail"),
-                                            userDoc.getString("phoneNumber")
+                                            documentUserSnapshot.getString("firstName"),
+                                            documentUserSnapshot.getString("lastName"),
+                                            documentUserSnapshot.getString("mail"),
+                                            documentUserSnapshot.getString("phoneNumber")
                                     ); //pickup'u sonra set etcez. Çok önemli bir şey değil o
+                                    ownersCarAdapter.addItem(ad);
                                 }
                         );
                         //iyi tamam araç bilgileri vea ait olduğu kullanıcı ilgisi geririlid
 
-                        ownersCarAdapter.addItem(ad);
+
 
                     }
 

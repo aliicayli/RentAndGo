@@ -37,7 +37,7 @@
                 >
 
                 <ImageView
-                    android:id="@+id/vehicleCategoryImage"
+                    android:id="@+id/vehicleCategoryImage2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerInside"
@@ -51,7 +51,7 @@
                 >
 
                 <TextView
-                    android:id="@+id/categoryTextHeader"
+                    android:id="@+id/categoryTextTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Details"
@@ -68,8 +68,9 @@
                     android:id="@+id/year"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="98dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    tools:layout_editor_absoluteY="98dp" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

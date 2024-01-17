@@ -26,13 +26,15 @@ TextView lastNameTextView;
 TextView emailTextView;
 TextView phoneNumberTextView;
 
+Intent intent;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_information_ad);
 
-        Intent intent = new Intent();
+        intent = getIntent();
 
 
         continueBookingButton = findViewById(R.id.continueBooking);
@@ -49,11 +51,15 @@ TextView phoneNumberTextView;
 
     private void ContinueBookingButtonClick() {
         continueBookingButton.setOnClickListener(view ->{
+            Intent intentforComplete = new Intent(this,BookingCompleteActivity.class);
+            intentforComplete.putExtra("firstName", intent.getStringExtra("firstName"));
+            intentforComplete.putExtra("lastName", intent.getStringExtra("lastName"));
+            intentforComplete.putExtra("phoneNumber", intent.getStringExtra("phoneNumber"));
             //UserManagement.ads.get(UserManagement.selectedAdID).firstName  = firstNameTextView.getText().toString();
             //UserManagement.ads.get(UserManagement.selectedAdID).lastName   = lastNameTextView.getText().toString();
             //UserManagement.ads.get(UserManagement.selectedAdID).email      = emailTextView.getText().toString();
             //UserManagement.ads.get(UserManagement.selectedAdID).phoneNumber = phoneNumberTextView.getText().toString();
-            startActivity(new Intent(this,BookingCompleteActivity.class));
+            startActivity(intentforComplete);
         });
     }
     private void PickUpDateTextViewClick() {

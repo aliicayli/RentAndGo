@@ -2,21 +2,17 @@ package com.msku.example;
 
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.msku.example.rentcar.R;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class AdListAdapter2 extends RecyclerView.Adapter<AdListAdapter2.ViewHolder2> {
 
@@ -47,6 +43,10 @@ public class AdListAdapter2 extends RecyclerView.Adapter<AdListAdapter2.ViewHold
             public void onClick(View v) {
                 UserManagement.selectedAdID = position;
                 Intent intent = new Intent(mContext, InformationAdActivity.class);
+                System.out.println("--- >>>>  "+currentAd.firstName);
+                intent.putExtra("firstName",currentAd.firstName);
+                intent.putExtra("lastName",currentAd.lastName);
+                intent.putExtra("phoneNumber",currentAd.phoneNumber);
                 mContext.startActivity(intent);
             }
         });

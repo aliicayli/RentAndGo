@@ -16,7 +16,8 @@ import java.util.List;
 public class CarCategoryActivity extends AppCompatActivity {
 
     private RecyclerView recycler_view;
-    private CarCategoryAdapter ownersCarAdapter;
+    //private CarCategoryAdapter ownersCarAdapter;
+    private CarCategoryAdapter2 ownersCarAdapter2;
 
 
     @Override
@@ -37,9 +38,11 @@ public class CarCategoryActivity extends AppCompatActivity {
         cardImages.add(R.drawable.coupe);
 
         recycler_view.setLayoutManager(new LinearLayoutManager(this));
-        ownersCarAdapter = new CarCategoryAdapter(this,cardTexts ,cardImages);
-        //ownersCarAdapter = new CarCategoryAdapter(cardTexts ,cardImages);
-        recycler_view.setAdapter(ownersCarAdapter);
+       // ownersCarAdapter = new CarCategoryAdapter(this,cardTexts ,cardImages); //kullanılmadı
+
+        ownersCarAdapter2 = new CarCategoryAdapter2(this,cardTexts ,cardImages);
+        //recycler_view.setAdapter(ownersCarAdapter);
+        recycler_view.setAdapter(ownersCarAdapter2);
 
     }
 }
